@@ -15,7 +15,7 @@ while True:
     #     tokenize input
 
     tokens = equation.split(" ")
-    if "q" in tokens[0]:
+    if "q" in tokens[0][0]:
         print("you are exiting!")
         break
         
@@ -27,29 +27,35 @@ while True:
 
         #             (...etc.)
 
+        num1 = int(tokens[1])
+
+        if len(tokens) > 2:
+
+            num2 = int(tokens[2])
+
         if tokens[0] == "+":
-            ans = add(tokens[1],tokens[2])
+            ans = add(num1,num2)
     
         elif tokens[0] == "-":
-            ans = subtract(token[1] - token[2])
+            ans = subtract(num1, num2)
     
         elif tokens[0] == "*":
-            ans = multiply(tokens[1], tokens[2])
+            ans = multiply(num1, num2)
         
         elif tokens[0] == "/":
-            ans = divide(tokens[1],tokens[]2)
+            ans = divide(num1,num2)
     
         elif tokens[0] == "square":
-            ans = square(tokens[1])
+            ans = square(num1)
             
         elif tokens[0] == "cube":
-            ans = cube(tokens[1])
+            ans = cube(num1)
 
         elif tokens[0] == "pow":
-            ans = pow(tokens[1],tokens[2])
+            ans = pow(num1,num2)
         
-        elif token[0] == "mod":
-            ans = mod(tokens[1],tokens[2])
+        elif tokens[0] == "mod":
+            ans = mod(num1,num2)
         
         else:
             print("Please input proper format!")
